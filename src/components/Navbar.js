@@ -30,7 +30,7 @@ const Navbar = ({ handleLogout }) => {
                 </li>
             </ul>
             <button className="logout-button" onClick={handleLogout}>Logout</button>
-        </nav>
+        </nav> 
     );
 };
 
