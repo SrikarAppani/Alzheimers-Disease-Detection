@@ -1,11 +1,9 @@
-/* Overall Container */
 .home-container {
     padding: 2rem;
     background-color: #f7f7f7;
     font-family: 'Arial', sans-serif;
 }
 
-/* Main Content Styles */
 .home-content {
     max-width: 800px;
     margin: auto;
