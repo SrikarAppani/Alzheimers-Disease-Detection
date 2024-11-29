@@ -1,0 +1,77 @@
+/* Navigation bar styling */
+.navbar {
+    color: white;
+    background-color: #3498db; /* Navigation bar color */
+    padding: 0.5rem 2rem; /* Reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align nav items and button at opposite ends */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.nav-item {
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white; /* Font color */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s;
+}
+
+/* Style when the nav item is clicked */
+.nav-item.clicked {
+    background-color: #2980b9; /* Highlighted background when clicked */
+    border-radius: 5px;
+}
+
+/* Override the :active pseudo-class */
+.nav-item:active {
+    background-color: inherit; /* Retain the original background color */
+    color: inherit; /* Retain the original font color */
+}
+
+.separator {
+    width: 2px;
+    height: 30px;
+    background-color: white;
+    margin: 0 0.5rem;
+}
+
+/* Logout Button Styling */
+.logout-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .logout-button {
+        margin-top: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+}

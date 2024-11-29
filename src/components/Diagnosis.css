@@ -1,0 +1,58 @@
+.diagnosis-container {
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 2rem;
+    max-width: 600px; /* Limit the width of the content */
+    margin: 0 auto; /* Center the component */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center-align text */
+}
+
+.upload-section {
+    margin-bottom: 2rem; /* Space below the upload section */
+}
+
+h1 {
+    color: #3498db; /* Main heading color */
+    margin-bottom: 1rem;
+}
+
+h2 {
+    color: #2c3e50; /* Secondary heading color */
+    margin-bottom: 1rem;
+}
+
+h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.image-preview img {
+    width: 100%; /* Make the image responsive */
+    max-width: 400px; /* Set a maximum width */
+    border: 2px solid #3498db; /* Border around the image */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 1rem; /* Space above the image */
+}
+
+button {
+    background-color: #3498db; /* Button color */
+    color: white; /* Button text color */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker button on hover */
+}
+
+.result {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
