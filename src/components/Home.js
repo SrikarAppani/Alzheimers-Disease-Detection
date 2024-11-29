@@ -1,14 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import "./Home.css"; // Add styling for the home page
+import "./Home.css";
 
 const Home = () => {
 
     return (
         <div className="home-container">
-            <header className="home-header">
-                <h1>Alzheimer's Detection App</h1>
-            </header>
             <div className="home-content">
                 <h2>Welcome to Alzheimer's Detection App</h2>
                 <p>
