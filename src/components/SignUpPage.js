@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SignupPage = () => {
+const SignupPage = ({updateUsername}) => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -21,6 +21,7 @@ const SignupPage = () => {
   
       if (response.status === 201) { // HTTP 201 Created
         localStorage.setItem("isAuthenticated", "true");
+        updateUsername(formData.username);
         alert("Signup successful!");
         navigate("/home");
       }

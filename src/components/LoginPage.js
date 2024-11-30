@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const LoginPage = () => {
+const LoginPage = ({updateUsername}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -16,6 +16,7 @@ const LoginPage = () => {
       });
       if (response.ok) {
         localStorage.setItem("isAuthenticated", "true");
+        updateUsername(username);
         navigate("/home");
       }
       else {
