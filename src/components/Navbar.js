@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ( {username} ) => {
     const location = useLocation();
     const navigate = useNavigate();
     const [selectedTab, setSelectedTab] = useState(location.pathname);
+    
     const handleLogout = () => {
         localStorage.removeItem("isAuthenticated");
         navigate("/");
     };
+
     const handleClick = (path) => {
         setSelectedTab(path);
     };
@@ -30,7 +32,7 @@ const Navbar = () => {
                     <Link to="/history" onClick={() => handleClick("/history")}>History</Link>
                 </li>
             </ul>
-            <button className="logout-button" onClick={handleLogout}>Logout</button>
+            <button className="logout-button" onClick={handleLogout}>Logout ({username})</button>
         </nav> 
     );
 };

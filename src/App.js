@@ -29,7 +29,7 @@ const AppContent = () => {
     
     return (
         <div className="app-container">
-            {!noNavbarPaths.includes(location.pathname) && <Navbar />}
+            {!noNavbarPaths.includes(location.pathname) && <Navbar username = {username} />}
             {noNavbarPaths.includes(location.pathname) && <div className="logo-container-login">
                 <img src={logo} alt="Logo" className="logo-login" />
             </div>}
@@ -51,7 +51,7 @@ const AppContent = () => {
                     Developed by Srikar A, Bhavana K, Manasvi P
                 </div>
                 <div className="footer-text">
-                    Guided by Kamal Vijetha
+                    Guided by Mrs. Kamal Vijetha
                 </div>
             </footer>
         </div>
