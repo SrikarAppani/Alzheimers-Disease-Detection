@@ -20,7 +20,7 @@ const AppContent = () => {
         const storedUsername = sessionStorage.getItem("storedUsername");
         if(storedUsername)
                 setUsername(storedUsername);
-    });
+    }, []);
 
     const updateUsername = ((username) => {
         setUsername(username);
