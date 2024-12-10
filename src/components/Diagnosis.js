@@ -9,6 +9,7 @@ const Diagnosis = ({username}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [scannedDate, setScannedDate] = useState("");
     const [showAddToDatabase, setShowAddToDatabase] = useState(false);
+    const [advice, setAdvice] = useState("");
 
     const openModal = () => {
       setIsModalOpen(true);
@@ -47,6 +48,7 @@ const Diagnosis = ({username}) => {
             const data = await response.json();
             if (response.ok) {
                 setResult(`Prediction Result: ${data.result}`);
+                provideAdvice(data.result);
                 setShowAddToDatabase(true);
             }
             else {
@@ -93,7 +95,25 @@ const Diagnosis = ({username}) => {
             alert("Some error occured!");
             closeModal();
         }
+    };
 
+    const provideAdvice = (stage) => {
+        switch (stage.toLowerCase()) {
+            case "very mild demented":
+                setAdvice("Consider monitoring symptoms closely and implementing lifestyle changes to support cognitive function.");
+                break;
+            case "mild demented":
+                setAdvice("Schedule regular follow-ups with your healthcare provider to monitor symptoms and manage daily activities.");
+                break;
+            case "moderate demented":
+                setAdvice("Consult your doctor immediately for a comprehensive treatment plan and to discuss potential therapies and support options.");
+                break;
+            case "non demented":
+                setAdvice("Maintain a healthy lifestyle and consider periodic check-ups to monitor cognitive health.");
+                break;
+            default:
+                setAdvice("Please consult a specialist for a personalized plan of care.");
+        }
     };
 
     return (
@@ -112,6 +132,7 @@ const Diagnosis = ({username}) => {
                 {showAddToDatabase && <button onClick={openModal}>Add to Databse</button>}
             </div>
             {result && <p className="result">{result}</p>}
+            {advice && <p className="advice">{advice}</p>}
             <div className="addtodatabasemodal">
                 <AddToDatabaseModal isOpen={isModalOpen} onClose={closeModal}>
                     <form onSubmit={handleAddToDatabase}>
